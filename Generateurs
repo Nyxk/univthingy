@@ -1,0 +1,22 @@
+def popipo(n,g):
+	m=n
+	l=[]
+	s=0
+	while len(l)!=g:
+		mod=n%g
+		if mod not in l:
+			l+=[mod]
+		n+=m
+		s+=1
+		if s>g:
+			break	
+	if len(l)== g:
+		return(m)
+g=int(input("n????: " ))
+a=[c for c in range(g)]
+x=[]
+for i in a:
+	if popipo(i,g) is not None:
+		x+=[popipo(i,g)]
+print(x)
+	
